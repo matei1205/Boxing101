@@ -1,0 +1,204 @@
+  <!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Boxul - Pagina Principală</title>
+  <style>
+    body {
+      background: url('fundal-box.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #f4f4f4;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #8B0000;
+      padding: 20px 10px;
+      text-align: center;
+      position: relative;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    marquee {
+      background-color: #222;
+      color: #FF4500;
+      font-size: 1.2em;
+      padding: 10px;
+      margin: 0;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1, h2 {
+      color: #FFD700;
+    }
+
+    ul, ol, dl {
+      text-align: left;
+      margin: 20px auto;
+      max-width: 600px;
+    }
+
+    dt {
+      font-weight: bold;
+      color: #FF6347;
+    }
+
+    dd {
+      margin-bottom: 10px;
+    }
+
+    video, audio {
+      margin: 20px auto;
+      display: block;
+    }
+
+    #combinatie {
+      font-size: 1.8em;
+      margin: 30px auto;
+      padding: 20px;
+      background-color: #222;
+      border: 2px solid #FFD700;
+      border-radius: 10px;
+      width: 80%;
+      max-width: 600px;
+      min-height: 60px;
+    }
+
+    button {
+      background-color: #8B0000;
+      color: #fff;
+      padding: 15px 30px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #a80000;
+    }
+
+    footer {
+      background-color: #8B0000;
+      padding: 20px 10px;
+      font-size: 0.9em;
+      margin-top: 40px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Bine ai venit în lumea boxului!</h1>
+    <nav>
+      <a href="index.html">Acasă</a>
+      <a href="istorie.html">Istorie</a>
+      <a href="tehnici.html">Tehnici</a>
+      <a href="https://www.worldboxingnews.net" target="_blank">Știri Externe</a>
+    </nav>
+  </header>
+
+  <marquee>🔥 Boxul este mai mult decât un sport - este un mod de viață! 🔥</marquee>
+
+  <section>
+    <h2>Ce este boxul?</h2>
+    <p>
+      Boxul este unul dintre cele mai vechi și respectate sporturi de luptă din lume. Practicat încă din Grecia Antică, boxul a evoluat
+      de la lupte brute fără reguli la un sport complex, reglementat și elegant.
+    </p>
+    <p>
+      În box, fiecare mișcare contează. De la garda poziționată corect, până la lovitura bine calculată, totul este antrenat
+      în detaliu. Nu este doar un test fizic, ci și un joc mental.
+    </p>
+    <p>
+      Boxul nu este doar pentru competiție – este și o formă excelentă de fitness. Ajută la arderea caloriilor, la reducerea stresului
+      și la îmbunătățirea disciplinei personale.
+    </p>
+
+    <h2>Beneficii ale boxului</h2>
+    <ol>
+      <li>Dezvoltă o condiție fizică excepțională</li>
+      <li>Îmbunătățește reflexele și coordonarea</li>
+      <li>Crește rezistența cardiovasculară</li>
+      <li>Dezvoltă încrederea și disciplina</li>
+    </ol>
+
+    <h2>Motivul pentru care milioane aleg boxul:</h2>
+    <ul>
+      <li>Sport complet: fizic și mental</li>
+      <li>Formă eficientă de autoapărare</li>
+      <li>Reduce stresul și crește energia</li>
+      <li>Promovează stilul de viață sănătos</li>
+    </ul>
+
+    <h2>Termeni de bază în box</h2>
+    <dl>
+      <dt>Jab</dt>
+      <dd>Lovitură directă cu mâna din față, rapidă și precisă.</dd>
+      <dt>Hook</dt>
+      <dd>Lovitură circulară aplicată lateral, de obicei în zona capului.</dd>
+      <dt>Uppercut</dt>
+      <dd>Lovitură ascendentă, direcționată spre bărbia adversarului.</dd>
+      <dt>Clinching</dt>
+      <dd>Tehnică defensivă pentru a opri atacul oponentului.</dd>
+    </dl>
+
+    <h2>Video motivațional</h2>
+    <video width="640" height="360" controls>
+      <source src="box-training.mp4" type="video/mp4">
+  
+    </video>
+
+    <h2>Sunet motivațional</h2>
+    <audio controls>
+      <source src="motivation.mp3" type="audio/mpeg">
+    
+    </audio>
+
+    <h2>Combinații de Antrenament Box</h2>
+    <p>Apasă pe buton pentru a genera o nouă combinație de lovituri!</p>
+    <div id="combinatie">—</div>
+    <button onclick="genereazaComb()">Generează combinație</button>
+  </section>
+
+  
+
+  <script>
+    const lovituri = ["Directa", "Croseu", "Ciocan", "Upercut", "Eschiva", "Eschiva rotativa", "Pas în spate", "Lovitură la corp"];
+    function genereazaComb() {
+      const nrLovituri = Math.floor(Math.random() * 3) + 2;
+      let combinatia = [];
+      for (let i = 0; i < nrLovituri; i++) {
+        const random = Math.floor(Math.random() * lovituri.length);
+        combinatia.push(lovituri[random]);
+      }
+      document.getElementById('combinatie').innerText = combinatia.join(', ');
+    }
+  </script>
+ <footer>
+     <p>&copy; 2025 -Proiect Despre Istoria Boxului | Conținut educațional</p>
+  </footer>
+</body>
+</html>
